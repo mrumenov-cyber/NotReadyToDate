@@ -12,16 +12,17 @@
       --gold-edge:#eadca6;
 
       --silver:#a7b0b7;
-      --silver-deep:#8b949c;
       --silver-soft:#eef2f5;
       --silver-edge:#dfe6ea;
 
+      --purple:#7c5cff;
+      --purple-dark:#6848e8;
+
       --ink:#1a1a1a;
       --muted:#555;
-      --brand:#7c5cff;
-      --edge:#e5e6ee;
       --bg:#fff;
       --box:#f8f8fc;
+      --edge:#e5e6ee;
     }
     *{box-sizing:border-box}
     body{
@@ -43,7 +44,6 @@
       color:#5a4700;padding:10px 14px;border-radius:10px;font-weight:700
     }
 
-    /* Video */
     .video-wrapper{
       width:100%;max-width:1000px;position:relative;border-radius:16px;overflow:hidden;
       aspect-ratio:16/9;margin:18px 0 32px;border:1px solid var(--edge);box-shadow:0 6px 22px rgba(0,0,0,.06)
@@ -54,7 +54,6 @@
       background:rgba(0,0,0,.8);backdrop-filter:blur(6px);color:#fff;text-align:center;padding:20px
     }
 
-    /* Tiers */
     .tiers{
       width:100%;max-width:1000px;margin:0 0 70px;display:grid;gap:22px;
       grid-template-columns:repeat(2,minmax(0,1fr))
@@ -77,22 +76,22 @@
     .features li{margin:7px 0}
     .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
     .btn{
-      align-self:flex-start;background:var(--brand);color:#fff;padding:12px 18px;border-radius:10px;
+      align-self:flex-start;background:var(--purple);color:#fff;padding:12px 18px;border-radius:10px;
       text-decoration:none;font-weight:700;transition:transform .1s, background .2s
     }
-    .btn:hover{background:#6848e8}
+    .btn:hover{background:var(--purple-dark)}
     .btn:active{transform:translateY(1px)}
-    .btn.alt{background:#111;color:#fff}
-    .btn.silver-alt{background:var(--silver);color:#fff}
-    .btn.silver-alt:hover{background:var(--silver-deep)}
+    .btn.alt{background:#111}
     .divider{text-align:center;margin:8px 0 14px;color:#888;font-size:13px}
 
-    /* Silver / Gold accent skins */
+    /* Silver */
     .card.silver{
       background:linear-gradient(180deg,#f6f8fa 0%, #eef2f5 100%);
       border:1px solid var(--silver-edge);
       box-shadow:0 10px 24px rgba(167,176,183,.18), 0 5px 10px rgba(0,0,0,.05);
     }
+
+    /* Gold */
     .card.gold{
       background:linear-gradient(180deg,#fffaf0 0%, #fff5da 100%);
       border:1px solid var(--gold-edge);
@@ -119,10 +118,11 @@
       background:#fff;border:1px dashed #d0d7db;border-radius:12px;padding:12px 14px;line-height:1.5
     }
     .gold-why{border-color:#f1d88a;}
-    .card.gold .btn{background:var(--gold);color:#111;font-weight:800}
-    .card.gold .btn:hover{background:var(--gold-deep);color:#111}
+    .btn.gold{background:var(--gold);color:#111;font-weight:800}
+    .btn.gold:hover{background:var(--gold-deep)}
+    .btn.purple{background:var(--purple);color:#fff;font-weight:700}
+    .btn.purple:hover{background:var(--purple-dark)}
 
-    /* Bottom blocks */
     #consultation{max-width:1000px;width:100%;margin:0 0 50px}
     .consult{
       background:#eaf4ff;border:1px solid #c6e2ff;border-radius:14px;padding:22px 24px;text-align:center;line-height:1.45
@@ -192,7 +192,7 @@
         <a class="btn" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver" target="_blank" rel="noopener">
           €1,111 Pay in Full →
         </a>
-        <a class="btn silver-alt" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver--in-4-instalments" target="_blank" rel="noopener">
+        <a class="btn alt" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver--in-4-instalments" target="_blank" rel="noopener">
           4 × €333 →
         </a>
       </div>
@@ -227,10 +227,10 @@
 
       <div class="divider">Choose your plan</div>
       <div class="cta-row">
-        <a class="btn" href="https://stan.store/feminine_dating/p/your-path-to-your-divine-masculine-provider" target="_blank" rel="noopener">
+        <a class="btn gold" href="https://stan.store/feminine_dating/p/your-path-to-your-divine-masculine-provider" target="_blank" rel="noopener">
           €2,222 Pay in Full →
         </a>
-        <a class="btn alt" href="https://stan.store/feminine_dating/p/get-married-in-1-year-in-4-monthly-instalments" target="_blank" rel="noopener">
+        <a class="btn purple" href="https://stan.store/feminine_dating/p/get-married-in-1-year-in-4-monthly-instalments" target="_blank" rel="noopener">
           4 × €644 →
         </a>
       </div>
