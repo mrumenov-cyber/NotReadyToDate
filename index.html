@@ -18,6 +18,10 @@
       --purple:#7c5cff;
       --purple-dark:#6848e8;
 
+      --pink:#ff4da6;
+      --pink-deep:#e03f8f;
+      --pink-soft:#fff0f7;
+
       --ink:#1a1a1a;
       --muted:#555;
       --bg:#fff;
@@ -55,9 +59,9 @@
     }
 
     .tiers{
-      width:100%;max-width:1000px;margin:0 0 70px;display:grid;gap:22px;
+      width:100%;max-width:1000px;margin:0 0 30px;display:grid;gap:22px;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      align-items:stretch; /* ensure equal height cards */
+      align-items:stretch;
     }
     @media (max-width:860px){ .tiers{grid-template-columns:1fr} }
     .card{
@@ -73,10 +77,10 @@
     .badge.silver{background:var(--silver-soft);color:#334047;border:1px solid var(--silver-edge)}
     .badge.gold{background:var(--gold-soft);color:#5a4700;border:1px solid var(--gold-edge)}
     .subtitle{color:var(--muted);margin:-2px 0 2px}
-    .features{margin:4px 0 0;color:var(--ink);line-height:1.55;flex:1 1 auto} /* take available space */
+    .features{margin:4px 0 0;color:var(--ink);line-height:1.55;flex:1 1 auto}
     .features ul{margin:8px 0 0 18px;padding:0}
     .features li{margin:7px 0}
-    .bottom-cta{margin-top:auto} /* push CTAs to bottom */
+    .bottom-cta{margin-top:auto}
     .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
     .btn{
       align-self:flex-start;background:var(--purple);color:#fff;padding:12px 18px;border-radius:10px;
@@ -87,14 +91,11 @@
     .btn.alt{background:#111}
     .divider{text-align:center;margin:8px 0 14px;color:#888;font-size:13px}
 
-    /* Silver */
     .card.silver{
       background:linear-gradient(180deg,#f6f8fa 0%, #eef2f5 100%);
       border:1px solid var(--silver-edge);
       box-shadow:0 10px 24px rgba(167,176,183,.18), 0 5px 10px rgba(0,0,0,.05);
     }
-
-    /* Gold */
     .card.gold{
       background:linear-gradient(180deg,#fffaf0 0%, #fff5da 100%);
       border:1px solid var(--gold-edge);
@@ -122,11 +123,54 @@
     }
     .gold-why{border-color:#f1d88a;}
 
-    /* Gold button variants */
     .btn.gold{background:var(--gold);color:#111;font-weight:800}
     .btn.gold:hover{background:var(--gold-deep)}
     .btn.purple{background:var(--purple);color:#fff;font-weight:700}
     .btn.purple:hover{background:var(--purple-dark)}
+
+    /* Testimonials (pink, big, beautiful) */
+    .testimonials{
+      width:100%;max-width:1000px;margin:14px 0 60px;padding:0 0 6px 0;
+    }
+    .t-wrap{
+      background:linear-gradient(135deg,#ffe7f2 0%, #fff0f7 45%, #ffe0f0 100%);
+      border:1px solid #ffd1e6;
+      border-radius:20px;
+      box-shadow:0 12px 30px rgba(255,77,166,.18), 0 6px 14px rgba(0,0,0,.05);
+      padding:22px 20px;
+    }
+    .t-head{
+      text-align:center;margin:0 0 14px 0;
+    }
+    .t-head h2{
+      margin:0;font-size:28px;line-height:1.2;color:#b82b6f;font-weight:900;letter-spacing:.2px;
+    }
+    .t-head p{
+      margin:8px 0 0;color:#7a2152;font-size:16px;
+    }
+    .t-cta{
+      text-align:center;margin:14px 0 16px;
+    }
+    .t-cta a{
+      display:inline-block;background:var(--pink);color:#fff;font-weight:800;
+      text-decoration:none;padding:12px 18px;border-radius:999px;
+      box-shadow:0 8px 18px rgba(255,77,166,.25);
+      transition:transform .1s, background .2s;
+    }
+    .t-cta a:hover{background:var(--pink-deep)}
+    .t-cta a:active{transform:translateY(1px)}
+
+    .t-frame{
+      position:relative;border-radius:14px;overflow:hidden;border:1px solid #ffcfe5;
+      background:#fff; /* behind iframe */
+    }
+    .t-frame::before{
+      content:"";display:block;padding-top:70vh; /* responsive height */
+      max-height:820px;min-height:520px;
+    }
+    .t-frame iframe{
+      position:absolute;inset:0;width:100%;height:100%;border:0
+    }
 
     #consultation{max-width:1000px;width:100%;margin:0 0 50px}
     .consult{
@@ -186,7 +230,7 @@
         </div>
 
         <ul style="margin:12px 0 0 18px">
-          <li>Learn irresistible communication that evokes pursuit and care</li>
+          <li>Learn emotional communication that evokes pursuit and care</li>
           <li>Rebuild trust and self-worth after disappointment</li>
           <li>Meet like-minded women who share your values and goals</li>
           <li>Steady guidance that keeps you grounded, feminine, and hopeful</li>
@@ -244,6 +288,34 @@
             4 × €644 →
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS & STORIES (PINK, BEAUTIFUL) -->
+  <section id="testimonials" class="testimonials" aria-labelledby="t-title">
+    <div class="t-wrap">
+      <div class="t-head">
+        <h2 id="t-title">✨ Testimonials & Stories of Success</h2>
+        <p>Real women. Real results. Let their journeys inspire your next step.</p>
+      </div>
+
+      <div class="t-cta">
+        <a href="https://feminine-dating-results.start.page/" target="_blank" rel="noopener">Open Full Stories in New Tab →</a>
+      </div>
+
+      <div class="t-frame">
+        <iframe
+          src="https://feminine-dating-results.start.page/"
+          title="Testimonials & Stories of Success"
+          loading="lazy"
+          allowtransparency="true"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <div class="t-cta" style="margin-top:14px">
+        <a href="https://feminine-dating-results.start.page/" target="_blank" rel="noopener">View All Success Stories →</a>
       </div>
     </div>
   </section>
