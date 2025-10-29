@@ -56,12 +56,14 @@
 
     .tiers{
       width:100%;max-width:1000px;margin:0 0 70px;display:grid;gap:22px;
-      grid-template-columns:repeat(2,minmax(0,1fr))
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      align-items:stretch; /* ensure equal height cards */
     }
     @media (max-width:860px){ .tiers{grid-template-columns:1fr} }
     .card{
       border-radius:16px;padding:24px 24px 22px;border:1px solid var(--edge);background:var(--box);
-      display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px rgba(0,0,0,.05)
+      display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px rgba(0,0,0,.05);
+      height:100%;
     }
     .card h2{margin:0;font-size:22px;display:flex;align-items:center;gap:10px;line-height:1.2}
     .badge{
@@ -71,9 +73,10 @@
     .badge.silver{background:var(--silver-soft);color:#334047;border:1px solid var(--silver-edge)}
     .badge.gold{background:var(--gold-soft);color:#5a4700;border:1px solid var(--gold-edge)}
     .subtitle{color:var(--muted);margin:-2px 0 2px}
-    .features{margin:4px 0 0;color:var(--ink);line-height:1.55}
+    .features{margin:4px 0 0;color:var(--ink);line-height:1.55;flex:1 1 auto} /* take available space */
     .features ul{margin:8px 0 0 18px;padding:0}
     .features li{margin:7px 0}
+    .bottom-cta{margin-top:auto} /* push CTAs to bottom */
     .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
     .btn{
       align-self:flex-start;background:var(--purple);color:#fff;padding:12px 18px;border-radius:10px;
@@ -118,6 +121,8 @@
       background:#fff;border:1px dashed #d0d7db;border-radius:12px;padding:12px 14px;line-height:1.5
     }
     .gold-why{border-color:#f1d88a;}
+
+    /* Gold button variants */
     .btn.gold{background:var(--gold);color:#111;font-weight:800}
     .btn.gold:hover{background:var(--gold-deep)}
     .btn.purple{background:var(--purple);color:#fff;font-weight:700}
@@ -173,28 +178,31 @@
         <div class="why-box">
           What you receive inside Silver:
           <ul style="margin:8px 0 0 18px">
-           <li><strong>✨ 3 months inside a guided group coaching container</strong> — designed to build lasting confidence, magnetic feminine energy, and deep emotional safety.</li>
-<li><strong>💬 Wednesday is our sacred “Support Day” on Telegram</strong> — your space to be seen, heard, and guided through anything that comes up, with personal feedback and loving support.</li>
-<li><strong>🎥 3 LIVE Zoom calls</strong> (one per month) — for transformation, clarity, and integration that help you embody everything you’re learning with ease.</li>
-<li><strong>❤️ We help you vet men</strong> — so you no longer waste time or energy on unavailable men, even if you used to attract them before.</li>
-
+            <li><strong>✨ 3 months inside a guided group coaching container</strong> — designed to build lasting confidence, magnetic feminine energy, and deep emotional safety.</li>
+            <li><strong>💬 Wednesday is our sacred “Support Day” on Telegram</strong> — your space to be seen, heard, and guided through anything that comes up, with personal feedback and loving support.</li>
+            <li><strong>🎥 3 LIVE Zoom calls</strong> (one per month) — for transformation, clarity, and integration that help you embody everything you’re learning with ease.</li>
+            <li><strong>❤️ We help you vet men</strong> — so you no longer waste time or energy on unavailable men, even if you used to attract them before.</li>
+          </ul>
         </div>
+
         <ul style="margin:12px 0 0 18px">
-          <li>Learn emotional communication that evokes pursuit and care</li>
+          <li>Learn irresistible communication that evokes pursuit and care</li>
           <li>Rebuild trust and self-worth after disappointment</li>
           <li>Meet like-minded women who share your values and goals</li>
           <li>Steady guidance that keeps you grounded, feminine, and hopeful</li>
         </ul>
       </div>
 
-      <div class="divider">Choose your plan</div>
-      <div class="cta-row">
-        <a class="btn" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver" target="_blank" rel="noopener">
-          €1,111 Pay in Full →
-        </a>
-        <a class="btn alt" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver--in-4-instalments" target="_blank" rel="noopener">
-          4 × €333 →
-        </a>
+      <div class="bottom-cta">
+        <div class="divider">Choose your plan</div>
+        <div class="cta-row">
+          <a class="btn" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver" target="_blank" rel="noopener">
+            €1,111 Pay in Full →
+          </a>
+          <a class="btn alt" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver--in-4-instalments" target="_blank" rel="noopener">
+            4 × €333 →
+          </a>
+        </div>
       </div>
     </div>
 
@@ -211,13 +219,13 @@
           What you receive inside Gold:
           <ul style="margin:8px 0 0 18px">
             <li><strong>✨ Three months inside an intimate group VIP container</strong> — a sacred space designed for rapid transformation, deep emotional safety, and tangible results.</li>
-<li><strong>💬 24/7 Telegram support</strong> from me and my married team — personalised feedback, emotional guidance, and grounded direction whenever you need it most.</li>
-<li><strong>🎥 8 LIVE Zoom calls</strong> (every second week) — for coaching, strategy, and energetic calibration that keep you inspired, focused, and magnetic.</li>
-<li><strong>❤️ We vet men for you</strong> — offering real-time protection, feedback, and clarity as you date, so you never waste energy on unavailable men again.</li>
-<li><strong>🌸 Limited spots</strong> — to preserve depth, intimacy, and the level of personal attention that true transformation requires.</li>
-
+            <li><strong>💬 24/7 Telegram support</strong> from me and my married team — personalised feedback, emotional guidance, and grounded direction whenever you need it most.</li>
+            <li><strong>🎥 8 LIVE Zoom calls</strong> (every second week) — for coaching, strategy, and energetic calibration that keep you inspired, focused, and magnetic.</li>
+            <li><strong>❤️ We vet men for you</strong> — offering real-time protection, feedback, and clarity as you date, so you never waste energy on unavailable men again.</li>
+            <li><strong>🌸 Limited spots</strong> — to preserve depth, intimacy, and the level of personal attention that true transformation requires.</li>
           </ul>
         </div>
+
         <ul style="margin:12px 0 0 18px">
           <li>Clarity on your values, vision, and non-negotiables</li>
           <li>Real-time red-flag protection and emotional calibration</li>
@@ -226,14 +234,16 @@
         </ul>
       </div>
 
-      <div class="divider">Choose your plan</div>
-      <div class="cta-row">
-        <a class="btn gold" href="https://stan.store/feminine_dating/p/your-path-to-your-divine-masculine-provider" target="_blank" rel="noopener">
-          €2,222 Pay in Full →
-        </a>
-        <a class="btn purple" href="https://stan.store/feminine_dating/p/get-married-in-1-year-in-4-monthly-instalments" target="_blank" rel="noopener">
-          4 × €644 →
-        </a>
+      <div class="bottom-cta">
+        <div class="divider">Choose your plan</div>
+        <div class="cta-row">
+          <a class="btn gold" href="https://stan.store/feminine_dating/p/your-path-to-your-divine-masculine-provider" target="_blank" rel="noopener">
+            €2,222 Pay in Full →
+          </a>
+          <a class="btn purple" href="https://stan.store/feminine_dating/p/get-married-in-1-year-in-4-monthly-instalments" target="_blank" rel="noopener">
+            4 × €644 →
+          </a>
+        </div>
       </div>
     </div>
   </section>
