@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Limited-time Training & Offer</title>
+  <style>
+    :root{
+      --gold:#c9a227;      /* rich gold */
+      --gold-soft:#f9f1cf;
+      --silver:#a7b0b7;    /* elegant silver */
+      --silver-soft:#eef2f5;
+      --ink:#1a1a1a;
+      --muted:#555;
+      --brand:#7c5cff;
+      --bg:#fff;
+      --edge:#e5e6ee;
+      --box:#f8f8fc;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;background:var(--bg);color:var(--ink);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+      display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-height:100vh
+    }
+    header{text-align:center;padding:28px 20px 14px;max-width:1000px;width:100%}
+    .countdown-box{
+      background:#111;color:#fff;font-size:22px;font-weight:700;
+      padding:14px 24px;border-radius:12px;display:inline-block;margin-bottom:16px
+    }
+    .hero-title{
+      margin:6px 0 10px;font-size:34px;line-height:1.15;font-weight:800;letter-spacing:.2px
+    }
+    .hero-sub{margin:6px 0 14px;color:var(--muted);font-size:16px}
+
+    /* Video */
+    .video-wrapper{
+      width:100%;max-width:1000px;position:relative;border-radius:16px;overflow:hidden;
+      aspect-ratio:16/9;margin:18px 0 32px;border:1px solid var(--edge);box-shadow:0 6px 22px rgba(0,0,0,.06)
+    }
+    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    .expired{
+      position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+      background:rgba(0,0,0,.8);backdrop-filter:blur(6px);color:#fff;text-align:center;padding:20px
+    }
+
+    /* Bonus pulse */
+    #bonus-box{transition:box-shadow .3s, transform .2s}
+    .pulse{animation:pulse 1.2s ease-out 2}
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(124,92,255,.35)}
+      70%{box-shadow:0 0 0 18px rgba(124,92,255,0)}
+      100%{box-shadow:0 0 0 0 rgba(124,92,255,0)}
+    }
+
+    /* Fast bonus strip */
+    #fast-bonus{max-width:1000px;width:100%;margin:-6px 0 26px}
+    #bonus-box{
+      background:#fff6e5;border:1px solid #ffe2ad;border-radius:14px;padding:18px 20px;line-height:1.45
+    }
+
+    /* Tiers (Silver / Gold) */
+    .tiers{
+      width:100%;max-width:1000px;margin:0 0 70px;display:grid;gap:22px;
+      grid-template-columns:repeat(2,minmax(0,1fr))
+    }
+    @media (max-width:860px){ .tiers{grid-template-columns:1fr} }
+    .card{
+      border-radius:16px;padding:24px 24px 22px;border:1px solid var(--edge);background:var(--box);
+      display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 24px rgba(0,0,0,.05)
+    }
+    .card h2{margin:0;font-size:22px;display:flex;align-items:center;gap:10px}
+    .badge{
+      font-size:12px;font-weight:800;letter-spacing:.4px;border-radius:999px;padding:6px 10px;line-height:1;display:inline-block
+    }
+    .badge.silver{background:var(--silver-soft);color:#334047;border:1px solid #d6dde2}
+    .badge.gold{background:var(--gold-soft);color:#5a4700;border:1px solid #ecd98f}
+    .price{font-weight:800}
+    .features{margin:2px 0 0;color:var(--muted);line-height:1.5}
+    .features ul{margin:8px 0 0 18px;padding:0}
+    .features li{margin:6px 0}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+    .btn{
+      align-self:flex-start;background:var(--brand);color:#fff;padding:12px 18px;border-radius:10px;
+      text-decoration:none;font-weight:700;transition:transform .1s, background .2s
+    }
+    .btn:hover{background:#6848e8}
+    .btn:active{transform:translateY(1px)}
+    .btn.alt{background:#111}
+    .divider{text-align:center;margin:6px 0 18px;color:#888;font-size:13px}
+
+    /* Gold / Silver accents */
+    .card.silver{background:var(--silver-soft);border-color:#dfe6ea}
+    .card.gold{background:var(--gold-soft);border-color:#eadca6}
+    .card.gold .btn{background:var(--gold);color:#111;font-weight:800}
+    .card.gold .btn:hover{background:#b8921f;color:#111}
+
+    /* Bottom blocks */
+    #consultation{max-width:1000px;width:100%;margin:0 0 50px}
+    .consult{
+      background:#eaf4ff;border:1px solid #c6e2ff;border-radius:14px;padding:22px 24px;text-align:center;line-height:1.45
+    }
+    .consult a{
+      background:#0077ff;color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block
+    }
+    footer{text-align:center;padding:20px;color:#777;font-size:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="countdown-box" id="countdown">Loading...</div>
+    <h1 class="hero-title">I don't want to date, I am healing..</h1>
+    <p class="hero-sub">This video and the offers below will disappear when the timer hits zero.</p>
+  </header>
+
+  <!-- Video -->
+  <section class="video-wrapper">
+    <iframe
+      id="vimeo-iframe"
+      src="https://player.vimeo.com/video/1131801102?h=1ef5e1765b&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      title="I don't want to date, I am healing">
+    </iframe>
+
+    <div id="expired-overlay" class="expired">
+      <div>
+        <h2>Access has ended</h2>
+        <p>The training and the special offers are now closed. Join the waitlist to be notified next time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fast Acting Bonus -->
+  <section id="fast-bonus">
+    <div id="bonus-box">
+      <div style="font-weight:800;letter-spacing:.2px;margin-bottom:6px">FAST ACTING BONUS</div>
+      <div id="bonus-text">
+        Sign up <strong>today</strong> and get <strong>11 Extra Days of 24/7 Telegram Group Mentoring</strong> on me. <br/>
+        The faster you join, the more days you get… <em>you can join until 01. November</em>.
+      </div>
+    </div>
+  </section>
+
+  <!-- Silver / Gold Packages -->
+  <section class="tiers" id="cta-live">
+    <!-- SILVER -->
+    <div class="card silver">
+      <h2><span class="badge silver">SILVER PACKAGE</span> Get Married in 1 Year — Silver</h2>
+      <div class="features">
+        <ul>
+          <li>3 Months Group Coaching Container</li>
+          <li>3 Zoom calls (1 per month)</li>
+          <li>Ask questions every Wednesday</li>
+          <li>We help you vet men</li>
+        </ul>
+      </div>
+      <div class="divider">Choose your plan</div>
+      <div class="cta-row">
+        <a class="btn" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver" target="_blank" rel="noopener">
+          €1,111 Pay in Full →
+        </a>
+        <a class="btn alt" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver--in-4-instalments" target="_blank" rel="noopener">
+          4 × €333 →
+        </a>
+      </div>
+    </div>
+
+    <!-- GOLD -->
+    <div class="card gold">
+      <h2><span class="badge gold">GOLD PACKAGE</span> Get Married in 1 Year — Gold (VIP)</h2>
+      <div class="features">
+        <ul>
+          <li>3 Months VIP Group Coaching Container</li>
+          <li>24/7 Telegram Support from me and my team</li>
+          <li>We meet men for you</li>
+          <li>8 Zoom calls (every second week)</li>
+          <li><strong>Limited spots</strong></li>
+        </ul>
+      </div>
+      <div class="divider">Choose your plan</div>
+      <div class="cta-row">
+        <a class="btn" href="https://stan.store/feminine_dating/p/your-path-to-your-divine-masculine-provider" target="_blank" rel="noopener">
+          €2,222 Pay in Full →
+        </a>
+        <a class="btn alt" href="https://stan.store/feminine_dating/p/get-married-in-1-year-in-4-monthly-instalments" target="_blank" rel="noopener">
+          4 × €644 →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultation -->
+  <section id="consultation">
+    <div class="consult">
+      <div style="font-weight:700;font-size:20px;margin-bottom:6px">Still not sure?</div>
+      <div style="margin-bottom:12px">Book a short consultation call with me 💬</div>
+      <a href="https://calendly.com/feminine-enchantress/30min/" target="_blank" rel="noopener">Book your 30-min Call →</a>
+    </div>
+  </section>
+
+  <footer>
+    Bonuses and access close when the timer hits zero 💜
+  </footer>
+
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script>
+  // HARD-CODED ISO EXPIRY (Europe/Berlin – CET). Join until 01.11.2025 23:59:59.
+  const EXPIRY_ISO = '2025-11-01T23:59:59+01:00';
+  const expiryTs = new Date(EXPIRY_ISO).getTime();
+
+  const $count = document.getElementById('countdown');
+  const $overlay = document.getElementById('expired-overlay');
+  const $ctaLive = document.getElementById('cta-live');
+  const $iframe = document.getElementById('vimeo-iframe');
+  const $bonusText = document.getElementById('bonus-text');
+  const $bonusBox = document.getElementById('bonus-box');
+
+  let lastShownBonus = null;
+  let player;
+  try { player = new Vimeo.Player($iframe); } catch(e){}
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function formatRemaining(ms){
+    if(ms <= 0) return '00:00:00';
+    const s = Math.floor(ms/1000);
+    const d = Math.floor(s/86400);
+    const h = Math.floor((s%86400)/3600);
+    const m = Math.floor((s%3600)/60);
+    const sec = s%60;
+    return (d>0? d + 'd ' : '') + pad(h)+':'+pad(m)+':'+pad(sec);
+  }
+
+  // Start bonus at 11 and drop by 1/day until floor 4 by last day
+  function updateBonus(remainingMs){
+    const DAY_MS = 24*60*60*1000;
+    const daysLeft = Math.max(0, Math.ceil(remainingMs / DAY_MS));
+    let shownBonus = Math.min(11, daysLeft + 4);
+    shownBonus = Math.max(4, shownBonus);
+    if(shownBonus !== lastShownBonus){
+      $bonusText.innerHTML =
+        `Sign up <strong>today</strong> and get <strong>${shownBonus} Extra Days of 24/7 Telegram Group Mentoring</strong> on me.<br/>` +
+        `The faster you join, the more days you get… <em>you can join until 01. November</em>.`;
+      $bonusBox.classList.remove('pulse'); void $bonusBox.offsetWidth; $bonusBox.classList.add('pulse');
+      lastShownBonus = shownBonus;
+    }
+  }
+
+  function update(){
+    const remaining = expiryTs - Date.now();
+    const expired = remaining <= 0;
+    updateBonus(remaining);
+    if(expired){
+      $count.textContent = 'Expired';
+      $overlay.style.display = 'flex';
+      $ctaLive.style.display = 'none';
+      if(player){
+        player.pause().catch(()=>{}).finally(()=>{ if(player.unload) player.unload(); });
+      }
+    } else {
+      $count.textContent = formatRemaining(remaining);
+    }
+  }
+
+  update();
+  setInterval(update, 1000);
+  </script>
+</body>
+</html>
