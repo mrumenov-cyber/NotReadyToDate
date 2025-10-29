@@ -12,6 +12,7 @@
       --gold-edge:#eadca6;
 
       --silver:#a7b0b7;
+      --silver-deep:#8b949c;
       --silver-soft:#eef2f5;
       --silver-edge:#dfe6ea;
 
@@ -81,27 +82,43 @@
     }
     .btn:hover{background:#6848e8}
     .btn:active{transform:translateY(1px)}
-    .btn.alt{background:#111}
+    .btn.alt{background:#111;color:#fff}
+    .btn.silver-alt{background:var(--silver);color:#fff}
+    .btn.silver-alt:hover{background:var(--silver-deep)}
     .divider{text-align:center;margin:8px 0 14px;color:#888;font-size:13px}
 
     /* Silver / Gold accent skins */
-    .card.silver{background:var(--silver-soft);border-color:var(--silver-edge)}
+    .card.silver{
+      background:linear-gradient(180deg,#f6f8fa 0%, #eef2f5 100%);
+      border:1px solid var(--silver-edge);
+      box-shadow:0 10px 24px rgba(167,176,183,.18), 0 5px 10px rgba(0,0,0,.05);
+    }
     .card.gold{
       background:linear-gradient(180deg,#fffaf0 0%, #fff5da 100%);
       border:1px solid var(--gold-edge);
       position:relative;
       box-shadow:0 14px 30px rgba(201,162,39,.18), 0 6px 14px rgba(0,0,0,.06);
     }
-    .card.gold .title-wrap{
+    .card.gold .title-wrap,
+    .card.silver .title-wrap{
       display:flex;align-items:center;gap:10px;justify-content:space-between
     }
+    .card.gold .crown,
+    .card.silver .crown{
+      width:28px;height:28px;border-radius:6px;border:1px solid #ddd;
+    }
     .card.gold .crown{
-      width:28px;height:28px;border-radius:6px;background:radial-gradient(circle at 30% 30%, #fff 0%, #ffeaa5 40%, #ffd86b 100%);
-      border:1px solid #f3d37d;box-shadow:inset 0 0 8px rgba(255,215,100,.6);
+      background:radial-gradient(circle at 30% 30%, #fff 0%, #ffeaa5 40%, #ffd86b 100%);
+      border-color:#f3d37d;box-shadow:inset 0 0 8px rgba(255,215,100,.6);
     }
-    .gold-why{
-      background:#fff; border:1px dashed #f1d88a; border-radius:12px; padding:12px 14px; line-height:1.5
+    .card.silver .crown{
+      background:radial-gradient(circle at 30% 30%, #fff 0%, #e8ebee 45%, #cfd5da 100%);
+      border-color:#e1e5e8;box-shadow:inset 0 0 8px rgba(167,176,183,.4);
     }
+    .why-box{
+      background:#fff;border:1px dashed #d0d7db;border-radius:12px;padding:12px 14px;line-height:1.5
+    }
+    .gold-why{border-color:#f1d88a;}
     .card.gold .btn{background:var(--gold);color:#111;font-weight:800}
     .card.gold .btn:hover{background:var(--gold-deep);color:#111}
 
@@ -146,22 +163,36 @@
   <section class="tiers" id="cta-live">
     <!-- SILVER -->
     <div class="card silver">
-      <h2><span class="badge silver">SILVER PACKAGE</span> Get Married in 1 Year — Silver</h2>
-      <div class="subtitle">Focused, guided momentum for women who want structure, support, and steady progress.</div>
+      <div class="title-wrap">
+        <h2><span class="badge silver">SILVER PACKAGE</span> Get Married in 1 Year — Silver</h2>
+        <div class="crown" aria-hidden="true"></div>
+      </div>
+      <div class="subtitle">Structured guidance, deep feminine shifts, and a supportive circle to keep you consistent and inspired.</div>
+
       <div class="features">
-        <ul>
-          <li>3 months group coaching container</li>
-          <li>3 Zoom calls — one deep-dive call each month</li>
-          <li>Ask questions every Wednesday for rapid clarity</li>
-          <li>We help you vet men so you never waste time</li>
+        <div class="why-box">
+          What you receive inside Silver:
+          <ul style="margin:8px 0 0 18px">
+            <li><strong>3 months group coaching container</strong> designed to build confidence, magnetism, and emotional safety</li>
+            <li><strong>3 live Zoom calls</strong> (one per month) for transformation, clarity, and integration</li>
+            <li><strong>Ask questions every Wednesday</strong> and get personal feedback to stay on track</li>
+            <li><strong>We vet men for you</strong> — so you don’t waste energy on unavailable ones</li>
+          </ul>
+        </div>
+        <ul style="margin:12px 0 0 18px">
+          <li>Learn emotional communication that evokes pursuit and care</li>
+          <li>Rebuild trust and self-worth after disappointment</li>
+          <li>Meet like-minded women who share your values and goals</li>
+          <li>Steady guidance that keeps you grounded, feminine, and hopeful</li>
         </ul>
       </div>
+
       <div class="divider">Choose your plan</div>
       <div class="cta-row">
         <a class="btn" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver" target="_blank" rel="noopener">
           €1,111 Pay in Full →
         </a>
-        <a class="btn alt" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver--in-4-instalments" target="_blank" rel="noopener">
+        <a class="btn silver-alt" href="https://stan.store/feminine_dating/p/get-married-in-1-year-silver--in-4-instalments" target="_blank" rel="noopener">
           4 × €333 →
         </a>
       </div>
@@ -176,21 +207,21 @@
       <div class="subtitle">Premium access, high-touch mentoring, and powerful momentum — for women ready to be fully supported and accelerated.</div>
 
       <div class="features">
-        <div class="gold-why">
+        <div class="why-box gold-why">
           What you receive inside Gold:
           <ul style="margin:8px 0 0 18px">
             <li><strong>3 months VIP group coaching container</strong> with intimate, results-driven guidance</li>
             <li><strong>24/7 Telegram support</strong> from me and my married team — personalised feedback when it matters</li>
-            <li><strong>We meet men for you</strong> — strategic introductions and active outreach that expand your dating universe</li>
-            <li><strong>8 live Zoom calls</strong> (every second week) for coaching, strategy, and calibration</li>
+            <li><strong>We vet men for you</strong> — real-time support and protection while dating</li>
+            <li><strong>8 live Zoom calls</strong> (every second week) for coaching, strategy, and energetic calibration</li>
             <li><strong>Limited spots</strong> to protect depth, intimacy, and speed</li>
           </ul>
         </div>
         <ul style="margin:12px 0 0 18px">
           <li>Clarity on your values, vision, and non-negotiables</li>
-          <li>Real-time vetting and red-flag protection</li>
-          <li>Messaging that evokes pursuit, provision, and commitment</li>
-          <li>Weekly action plans with gentle accountability</li>
+          <li>Real-time red-flag protection and emotional calibration</li>
+          <li>Scripts, communication frameworks & emotional tools</li>
+          <li>Weekly action plans to move forward with ease</li>
         </ul>
       </div>
 
@@ -221,18 +252,14 @@
 
   <script src="https://player.vimeo.com/api/player.js"></script>
   <script>
-  // HARD-CODED ISO EXPIRY (Europe/Berlin – CET). Join until 01.11.2025 23:59:59.
   const EXPIRY_ISO = '2025-11-01T23:59:59+01:00';
   const expiryTs = new Date(EXPIRY_ISO).getTime();
-
   const $count = document.getElementById('countdown');
   const $overlay = document.getElementById('expired-overlay');
   const $ctaLive = document.getElementById('cta-live');
   const $iframe = document.getElementById('vimeo-iframe');
-
   let player;
   try { player = new Vimeo.Player($iframe); } catch(e){}
-
   function pad(n){ return String(n).padStart(2,'0'); }
   function formatRemaining(ms){
     if(ms <= 0) return '00:00:00';
@@ -243,7 +270,6 @@
     const sec = s%60;
     return (d>0? d + 'd ' : '') + pad(h)+':'+pad(m)+':'+pad(sec);
   }
-
   function update(){
     const remaining = expiryTs - Date.now();
     const expired = remaining <= 0;
@@ -251,14 +277,11 @@
       $count.textContent = 'Expired';
       $overlay.style.display = 'flex';
       $ctaLive.style.display = 'none';
-      if(player){
-        player.pause().catch(()=>{}).finally(()=>{ if(player.unload) player.unload(); });
-      }
+      if(player){ player.pause().catch(()=>{}).finally(()=>{ if(player.unload) player.unload(); }); }
     } else {
       $count.textContent = formatRemaining(remaining);
     }
   }
-
   update();
   setInterval(update, 1000);
   </script>
